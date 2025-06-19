@@ -18,9 +18,10 @@ app.secret_key = os.getenv("SECRET_KEY")
 app.config['DEBUG'] = os.getenv("DEBUG", "False") == "True"
 file_path = os.path.join(os.path.dirname(__file__), 'data', 'Structures_accompagnement_Movendo_v1.xlsm')
 
-
-
 model_path = 'word2vec_model.pkl'
+@app.route('/')
+def serve_home():
+    return send_from_directory('frontend', 'Frontend.html')
 
 def preprocess(text):
     if isinstance(text, str):
