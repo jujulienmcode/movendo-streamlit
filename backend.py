@@ -21,7 +21,7 @@ file_path = os.path.join(os.path.dirname(__file__), 'data', 'Structures_accompag
 model_path = 'word2vec_model.pkl'
 @app.route('/')
 def serve_home():
-    return send_from_directory('frontend', 'Frontend.html')
+    return send_from_directory('static', 'Frontend.html')
 
 def preprocess(text):
     if isinstance(text, str):
