@@ -17,7 +17,8 @@ CORS(app)
 app.secret_key = os.getenv("SECRET_KEY")
 app.config['DEBUG'] = os.getenv("DEBUG", "False") == "True"
 
-file_path = 'C:/Users/ju69/Centre_sante/App/Structures_accompagnement_Movendo_v1.xlsm'
+file_path = os.path.join("data", "Structures_accompagnement_Movendo_v1.xlsm")
+
 model_path = 'word2vec_model.pkl'
 
 def preprocess(text):
